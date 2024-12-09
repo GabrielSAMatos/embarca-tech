@@ -3,18 +3,48 @@
 #include <math.h>
 
 
-int main(){
+int scanffgets()
+{
+    int age;
+    double gpa;
+    char grade;
+    char name[20];
+
+    printf("Enter your name: ");
+    fgets(name, 20, stdin);
+
+    printf("Enter your grade: ");
+    scanf("%c", &grade);
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    printf("Enter your gpa: ");
+    scanf("%lf", &gpa);
 
 
+    printf("Your grade is %c.\n", grade);
+    printf("Your name is %s.\n", name);
+    printf("You are %d years old.\n", age);
+    printf("Your gpa is %f.", gpa);
 
     return 0;
 }
 
+
+
+int constvariable(){
+
+    const int num = 5;
+    printf("%d\n", num);
+    //num = 8;
+    printf("%d", num);
+
+    return 0;
+}
 /*
     Comentarios em C #fe
 */
-
-
 int powsqrt()
 {
     printf("%f \n", pow(2, 3));
