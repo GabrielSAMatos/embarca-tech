@@ -3,13 +3,24 @@
 #include <math.h>
 
 
+int main(){
 
 
 
-int poww()
+    return 0;
+}
+
+/*
+    Comentarios em C #fe
+*/
+
+
+int powsqrt()
 {
-    printf("%f", pow(2, 3));
-
+    printf("%f \n", pow(2, 3));
+    printf("%f", sqrt(4));
+    //ceil arredonda pra cima
+    //floor arredonda pra baixo
     return 0;
 }
 
