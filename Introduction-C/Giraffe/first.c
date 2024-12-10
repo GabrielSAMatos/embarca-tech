@@ -3,18 +3,88 @@
 #include <math.h>
 
 
+
+
+
+
 int main()
 {
+
+
 
     return 0;
 }
 
-int callFunction()
+
+int simpleCalculator()
+{
+    double num1, num2;
+    char op;
+
+
+    printf("Enter a first number: ");
+    scanf("%lf", &num1);
+
+    printf("Enter a second number: ");
+    scanf("%lf", &num2);
+
+    printf("Enter operator: ");
+    scanf(" %c", &op);
+
+    if(op == '+'){
+        printf("%f", num1 + num2);
+    }else if(op == '-'){
+        printf("%f", num1 - num2);
+    }else if(op == '*'){
+        printf("%f", num1 * num2);
+    }else if(op == '/'){
+        printf("%f", num1 / num2);
+    }else{
+        printf("Invalid Operator");
+    }
+
+
+    return 0;
+}
+
+int max(int num1, int num2, int num3){
+    int result;
+    if(num1 >= num2 && num1 >= num3){
+        result = num1;
+    } else if(num2 >= num1 && num2 >= num3){
+        result = num2;
+    } else{
+        result = num3;
+    }
+
+    return result;
+}
+
+int callFunction3()
+{
+    printf("%d", max(10, 10, 20));
+
+    return 0;
+}
+
+double cube(double num){
+    double result = num * num * num;
+    return result;
+}
+
+int callFunction2()
+{
+    printf("Answer: %f", cube(6.0));
+
+    return 0;
+}
+
+void callFunction()
 {
 
-    sayHi("Grabiel", 25);
-    sayHi("Matos", 25);
-    sayHi("Jon", 99);
+    //sayHi("Grabiel", 25);
+    //sayHi("Matos", 25);
+    //sayHi("Jon", 99);
 
 
 }
