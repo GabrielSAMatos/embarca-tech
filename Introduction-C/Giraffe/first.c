@@ -7,12 +7,34 @@
 int main()
 {
 
+    FILE * fpointer = fopen("employess.txt", "w");
+    fprintf(fpointer, "Jim, Salesman,\nPam, Receptionist\nOscar, Accounting");
+
+    fclose(fpointer);
+    return 0;
+
+}
 
 
+int forLoop()
+{
+    int secretNumber = 5;
+    int guess;
+
+    for(int i=1; i <=3; i++){
+        printf("Enter a number: ");
+        scanf("%d", &guess);
+        if(guess == secretNumber){
+            printf("You win!");
+            break;
+        }
+        if(i == 3){
+            printf("You lose!");
+        }
+    }
 
     return 0;
 }
-
 
 int doWhile()
 {
