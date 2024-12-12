@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
-
-
-
+#include <string.h>
 
 
 int main()
@@ -12,15 +9,86 @@ int main()
 
 
 
+
     return 0;
 }
 
+
+int doWhile()
+{
+
+    int index = 6;
+    do {
+        printf("%d\n", index);
+        index++;
+    }while(index <= 5);
+
+
+    return 0;
+}
+
+struct Student
+{
+    char name[50];
+    char major[50];
+    int age;
+    double gpa;
+};
+
+int estruturandoUmStruct()
+{
+
+    struct Student student1, student2;
+
+    student1.age = 25;
+    student1.gpa = 3.2;
+    strcpy(student1.name, "Grabiel Matos");
+    strcpy(student1.major, "Homeless");
+
+    student2.age = 25;
+    student2.gpa = 3.2;
+    strcpy(student2.name, "AAAA MaDDDtos");
+    strcpy(student2.major, "Homeless");
+
+    printf("%s", student1.name);
+
+    
+
+    return 0;
+}
+
+int switchUse()
+{
+    char grade = 'G';
+
+    switch (grade)
+    {
+    case 'A':
+        printf("You did great! ");
+        break;
+    case 'B':
+        printf("You did alright! ");
+        break;
+    case 'C':
+        printf("You did poorly! ");
+        break;
+    case 'D':
+        printf("You did very bad! ");
+        break;
+    case 'F':
+        printf("You failed! ");
+        break;
+    default:
+        printf("Invalid Grade.");
+        break;
+    }
+    return 0;
+}
 
 int simpleCalculator()
 {
     double num1, num2;
     char op;
-
 
     printf("Enter a first number: ");
     scanf("%lf", &num1);
@@ -42,7 +110,6 @@ int simpleCalculator()
     }else{
         printf("Invalid Operator");
     }
-
 
     return 0;
 }
