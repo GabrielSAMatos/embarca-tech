@@ -72,33 +72,40 @@ void isPressed(int btn){
         if (!gpio_get(BTN_A) && !gpio_get(BTN_B)){
             turnOn(1);
             cont = 0;
+            printf("%d\n", cont);
+            break;
         }   
     }
     
 }
 
 int main(){
+    stdio_init_all(); //da acesso ao terminal do putty
     set();
     cont = 0;
+    printf("%d\n", cont);
     while(true){
         sleep_ms(50);
         if (!gpio_get(BTN_A) && !gpio_get(BTN_B)){
             turnOn(1);
             cont = 0;
+            printf("%d\n", cont);
         }
         else if (!gpio_get(BTN_A)){
             cont++;
             order(cont);
+            printf("%d\n", cont);
             isPressed(BTN_A);
         }
         else if (!gpio_get(BTN_B)){
             cont--;
             order(cont);
             isPressed(BTN_B);
-
             if(cont < 0){
                 cont = 0;
-            }           
+            }        
+
+            printf("%d\n", cont);
         }
         else{
             turnOn(0);
