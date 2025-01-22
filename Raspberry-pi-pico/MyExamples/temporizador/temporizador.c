@@ -49,13 +49,19 @@ bool aerador_ligado(struct repeating_timer *t){ // enquanto o o2 estiver abaixo 
 }
 
 bool ligar_aerador(struct repeating_timer *t){ //liga o aerador caso o o2 esteja menos igual a 5 e desliga qnd o mesmo chega a 10
-    if(!gpio_get(BTN_A) && !aerador_ON && o2 <= 5 ){
+    if(((!gpio_get(BTN_A) && !aerador_ON && o2 <= 5) || (o2 < 1) && !aerador_ON)){
+        if(o2 < 1){
+            printf("Nível muito critico, sistema de segurança ativado.\n");
+        }
+
         aerador_ON = true;
+        gpio_put(LED_B_PIN, 1);
         printf("=== LIGANDO AERADORES ===\n");
     }
 
     if((aerador_ON && o2 >= 10) || (!gpio_get(BTN_B) && aerador_ON)){
         printf("=== DESLIGANDO AERADORES ===\n");
+        gpio_put(LED_B_PIN, 0);
         aerador_ON = false;
     }
 }
